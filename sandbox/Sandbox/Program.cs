@@ -1,21 +1,38 @@
 using System;
 
+
+class Circle
+{
+    private double _radius;
+
+    public void SetRadius(double radius)
+    {
+        if (radius < 0)
+        {
+            Console.WriteLine("Error");
+            return;
+        }
+        _radius = radius;
+    }
+
+    public double GetRadius()
+    {
+        return _radius;
+    }
+
+    public double GetArea()
+    {
+        return Math.PI * _radius * _radius;
+    }
+}
 class Program
 {
-     static double AddNumbers(double a, double b)
-      {
-        return a + b;
-      }
-
-      static void DisplayGreeting()
-      {
-        Console.WriteLine("Hello Bob, how are you?");
-      }
 
     static void Main(string[] args)
     {
-     double total = AddNumbers(123.456, 654.321);
-     Console.WriteLine(total);
-     DisplayGreeting();
+     Circle myCircle = new Circle();
+     myCircle.SetRadius(10.5);
+     Console.WriteLine($"{myCircle.GetRadius()}");
+     Console.WriteLine($"{myCircle.GetArea()}");
     }
 }
