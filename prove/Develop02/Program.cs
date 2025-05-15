@@ -1,9 +1,20 @@
 using System;
+using JournalMenu;
 
 class Program
 {
+
+    private static string ObtainFileName(string prompt)
+    {
+        Console.Write(prompt);
+        string fileName = Console.ReadLine();
+        return fileName;
+    }
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop02 World!");
+        Menu menu = new Menu();
+        menu.DisplayMenu();
+    
+        // Journal newJournal = new Journal();
     }
 }
