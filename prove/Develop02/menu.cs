@@ -1,22 +1,23 @@
 namespace JournalMenu
 {
     using System;
+    using System.IO.Enumeration;
     using Journalentry;
 
     public class Menu
     {
+        private Journal journal = new Journal();
         public void DisplayMenu()
         {
             int response = 0;
             while (response != 5)
             {
-                // Console.Clear();
                 Console.WriteLine("Welcome to the Journal Program!");
                 Console.WriteLine("Please select an option:");
-                Console.WriteLine("1. Write a new entry");
-                Console.WriteLine("2. Load entries from a file");
-                Console.WriteLine("3. Save entries to a file");
-                Console.WriteLine("4. Display all entries");
+                Console.WriteLine("1. Write");
+                Console.WriteLine("2. Display");
+                Console.WriteLine("3. Load");
+                Console.WriteLine("4. Save");
                 Console.WriteLine("5. Exit");
                 Console.Write("Enter your choice: ");
                 response = int.Parse(Console.ReadLine());
@@ -28,37 +29,34 @@ namespace JournalMenu
                         QuestionManager questionManager = new QuestionManager();
                         string prompt = questionManager.AskRandomprompt();
                         Console.WriteLine($"Prompt: {prompt}");
-                        Console.Write(" ");
+                        Console.Write("> ");
                         string entry = Console.ReadLine();
                         JournalEntry journalentry = new JournalEntry(prompt, entry);
+                        journal.AddEntry(journalentry);
                         journalentry.DisplayEntry();
                         break;
                     case 2:
-                        Console.WriteLine("Load entires.");
-                        // Call the method to load entries from a file
+                        Console.WriteLine("Display");
+                        journal.DisplayAllEntries();
                         break;
                     case 3:
-                        Console.WriteLine("Save entries.");
-                        // Call the method to save entries to a file
+                        Console.WriteLine("Enter the filename to load from:");
+                        Console.Write("> ");
+                        string loadFile = Console.ReadLine();
+                        journal.LoadFromFile(loadFile);
                         break;
                     case 4:
-                        Console.WriteLine("Display all entries.");
-                        // Call the method to display all entries
+                        Console.WriteLine("Name your file:");
+                        Console.WriteLine(">");
+                        string file_name = Console.ReadLine();
+                        journal.SaveToFile(file_name);
+
                         break;
                     case 5:
                         Console.WriteLine("Exiting the program. Goodbye!");
                         break;
                 }
-            }    
+            }
         }
     }
-
-    // class Program
-    // {
-    //     static void Main1()
-    //     {
-    //         Menu menu = new Menu();
-    //         menu.DisplayMenu();
-    //     }
-    // }
 }

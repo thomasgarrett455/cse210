@@ -1,13 +1,12 @@
 namespace Journalentry
 {
     using System;
-    using System.Buffers;
 
     public class JournalEntry
     {
-        private string _entry;
-        private string _date;
-        private string _prompt;
+        public string _entry { get; }
+        public string _date { get; set; }
+        public string _prompt { get; }
 
         public JournalEntry(string prompt, string entry)
         {
@@ -22,6 +21,17 @@ namespace Journalentry
             Console.WriteLine($"Prompt: {_prompt}");
             Console.WriteLine($"Entry: {_entry}");
         }
+
+        // public void WriteToFile(string filename)
+        // {
+        //     using (StreamWriter outputFile = new StreamWriter(filename))
+        //     {
+        //         foreach (JournalEntry entry in entries)
+        //         {
+        //             outputFile.WriteLine(entry.ToString());
+        //         }
+        //     }
+        // }
 
 
 }
