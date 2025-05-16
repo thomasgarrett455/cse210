@@ -1,7 +1,7 @@
 namespace JournalMenu
 {
     using System;
-
+    using Journalentry;
 
     public class Menu
     {
@@ -20,29 +20,36 @@ namespace JournalMenu
                 Console.WriteLine("5. Exit");
                 Console.Write("Enter your choice: ");
                 response = int.Parse(Console.ReadLine());
-            }
-            switch (response)
-            {
-                case 1:
-                    Console.WriteLine("You choose to write a new entry.");
-                    // Call the method to write a new entry
-                    break;
-                case 2:
-                    Console.WriteLine("Load entires.");
-                    // Call the method to load entries from a file
-                    break;
-                case 3:
-                    Console.WriteLine("Save entries.");
-                    // Call the method to save entries to a file
-                    break;
-                case 4:
-                    Console.WriteLine("Display all entries.");
-                    // Call the method to display all entries
-                    break;
-                case 5:
-                    Console.WriteLine("Exiting the program. Goodbye!");
-                    break;     
-            }
+
+                switch (response)
+                {
+                    case 1:
+                        Console.WriteLine("You choose to write a new entry.");
+                        QuestionManager questionManager = new QuestionManager();
+                        string prompt = questionManager.AskRandomprompt();
+                        Console.WriteLine($"Prompt: {prompt}");
+                        Console.Write(" ");
+                        string entry = Console.ReadLine();
+                        JournalEntry journalentry = new JournalEntry(prompt, entry);
+                        journalentry.DisplayEntry();
+                        break;
+                    case 2:
+                        Console.WriteLine("Load entires.");
+                        // Call the method to load entries from a file
+                        break;
+                    case 3:
+                        Console.WriteLine("Save entries.");
+                        // Call the method to save entries to a file
+                        break;
+                    case 4:
+                        Console.WriteLine("Display all entries.");
+                        // Call the method to display all entries
+                        break;
+                    case 5:
+                        Console.WriteLine("Exiting the program. Goodbye!");
+                        break;
+                }
+            }    
         }
     }
 
