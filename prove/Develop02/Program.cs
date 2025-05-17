@@ -14,7 +14,5 @@ class Program
     {
         Menu menu = new Menu();
         menu.DisplayMenu();
-    
-        // Journal newJournal = new Journal();
     }
 }

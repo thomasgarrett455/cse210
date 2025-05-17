@@ -36,7 +36,6 @@ namespace JournalMenu
                         journalentry.DisplayEntry();
                         break;
                     case 2:
-                        Console.WriteLine("Display");
                         journal.DisplayAllEntries();
                         break;
                     case 3:
