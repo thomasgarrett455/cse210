@@ -4,6 +4,29 @@ class Cylinder
 
     private double _height;
 
+    public Cylinder()
+    {
+        _height = 0.0;
+        _circle = null;
+    }
+
+    public Cylinder(Circle cirlce)
+    {
+        _height = 0.0;
+        _circle = cirlce;
+    }
+
+    // public Cylinder(Double height, Circle cirlce)
+    // {
+    //     _height = height;
+    //     _circle = circle;
+    // }
+
+    public Cylinder(double height, double radius)
+    {
+        _height = height;
+        _circle = new Circle(radius);
+    }
     public void SetHeight(double height)
     {
         _height = height;
