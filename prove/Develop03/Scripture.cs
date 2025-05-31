@@ -33,6 +33,12 @@ public class Scripture
         _words[index3].UnHide();
     }
 
+    public bool AreAllWordsHidden()
+    {
+        if (!_words.Any()) return true; 
+        return _words.All(word => word.IsHidden());
+    }
+
     public void DisplayScripture()
     {
         string newText = string.Join(" ", _words.Select(word => word.Value()));

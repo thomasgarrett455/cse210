@@ -2,17 +2,17 @@ public class Word
 {
     private string _word;
     private List<Word> _words = new();
-    private bool _hidden;
+    private bool _isHidden;
 
     public Word(string word)
     {
         _word = word;
-        _hidden = false;
+        _isHidden = false;
     }
 
     public string Value()
     {
-        if (_hidden)
+        if (_isHidden)
         {
             return new string('_', _word.Length);
         }
@@ -25,11 +25,16 @@ public class Word
 
     public void Hide()
     {
-        _hidden = true;
+        _isHidden = true;
     }
 
     public void UnHide()
     {
-        _hidden = false;
+        _isHidden = false;
+    }
+
+    public bool IsHidden()
+    {
+        return _isHidden;
     }
 }
