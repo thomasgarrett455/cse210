@@ -1,5 +1,5 @@
 using System;
-
+// To exceed requirements i added functionality that can unhide words of the scripture
 class Program
 {
     static void Main(string[] args)
