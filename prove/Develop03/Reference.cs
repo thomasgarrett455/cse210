@@ -14,12 +14,16 @@ public class Reference
         _endverse = endVerse;
     }
 
+    public Reference(string scripture, int chapter, int startVerse)
+    {
+        _scripture = scripture;
+        _chapter = chapter;
+        _startVerse = startVerse;
+    }
+
      public void DisplayReference()
     {
-        if (_startVerse == _endverse)
-            Console.WriteLine($"{_scripture} {_chapter}:{_startVerse}");
-        else
-            Console.WriteLine($"{_scripture} {_chapter}:{_startVerse}-{_endverse}");
+        Console.WriteLine($"{_scripture} {_chapter}:{_startVerse}{(_endverse > 0 && _startVerse != _endverse ? $"-{_endverse}" : "")}");
     }
 
 }
