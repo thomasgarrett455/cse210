@@ -8,9 +8,9 @@ class PoliceMan : Person
         _weapons = weapons;
     }
 
-        public override string GetPersonInformation()
+        public string GetPoliceManInformation()
     {
-        // Extend base method and add weapon info
-        return base.GetPersonInformation() + $" Weapon: {_weapons}";
+
+        return $"{GetPersonInformation()} :: Wepons: {_weapons}";
     }
 }

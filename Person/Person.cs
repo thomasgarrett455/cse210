@@ -19,8 +19,8 @@ class Person
         _age = age;
     }
 
-    public virtual string GetPersonInformation()
+    public string GetPersonInformation()
     {
-        return $"{_firstName} {_lastName}, {_age},";
+        return $"{_firstName} {_lastName}, Age: {_age}";
     }
 }
