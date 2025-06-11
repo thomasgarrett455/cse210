@@ -5,19 +5,39 @@ class Program
 
     static void Main(string[] args)
     {
-        Circle myCircle = new Circle(10);
-        Circle myCircle2 = new Circle(5);
-        //  myCircle.SetRadius(10.5);
-        Console.WriteLine($"{myCircle.GetRadius()}");
-        Console.WriteLine($"{myCircle.GetArea()}");
-     
-        Console.WriteLine($"{myCircle2.GetRadius()}");
-        Console.WriteLine($"{myCircle2.GetArea()}");
 
+        int sleepTime = 250;
+        int seconds = 30;
+        int time = 10;
 
-                Cylinder myCylinder = new Cylinder(100, 5);
-        //      myCylinder.SetCircle(myCircle);
-        //      myCylinder.SetHeight(10);
-                Console.WriteLine($"{myCylinder.GetVolume()}");
+        DateTime currentTime = DateTime.Now;
+        DateTime endTime = currentTime.AddSeconds(seconds);
+
+        string animationString = "(^_^)(-_-)";
+
+        // int count = time;
+
+        // while (DateTime.Now < endTime)
+        // {
+        //     Console.Write(count--);
+        //     Thread.Sleep(1000);
+        //     Console.Write("\b\b");
+        // }
+
+        while (DateTime.Now < endTime)
+            {
+                Console.Write(animationString[0..5]);
+                Thread.Sleep(sleepTime);
+                Console.Write("\b\b\b\b\b");
+                // Console.Write("/");
+                Console.Write(animationString[5..]);
+                Console.Write("\b\b\b\b\b");
+                // Console.Write("-");
+                Thread.Sleep(sleepTime);
+                // Console.Write("\b");
+                // Console.Write("\\");
+                // Thread.Sleep(sleepTime);
+                // Console.Write("\b");
+            }
     }
 }
