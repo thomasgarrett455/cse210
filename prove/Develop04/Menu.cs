@@ -16,7 +16,11 @@ class Menu
             {
                 case "1":
                     BreathingActivity activity = new BreathingActivity();
+                    activity.DisplaySpinner();
                     Console.WriteLine(activity.DisplayActivity());
+                    activity.Duration();
+                    activity.BreatheLength();
+                    activity.DisplayBreathingActivity();
                     break;
 
                 case "2":
