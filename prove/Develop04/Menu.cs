@@ -21,10 +21,13 @@ class Menu
                     activity.Duration();
                     activity.BreatheLength();
                     activity.DisplayBreathingActivity();
+                    activity.DisplayEndMessage();
                     break;
 
                 case "2":
-                    Console.WriteLine("Starting Reflecting Activity!");
+                    ReflectingActivity reflectingActivity = new ReflectingActivity();
+                    reflectingActivity.DisplaySpinner();
+                    Console.WriteLine(reflectingActivity.DisplayActivity());
                     break;
                 case "3":
                     Console.WriteLine("Start2ing Listing Activity!");
