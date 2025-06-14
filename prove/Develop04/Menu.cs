@@ -1,36 +1,44 @@
 class Menu
 {
+
+    private int _activity1;
+    private int _activity2;
+    private int _activity3;
     public void DisplayMenu()
     {
         string response = "";
         while (response != "4")
-        {
+        {   
+            Console.WriteLine();
+            Console.WriteLine($"Breathing Activity performed {_activity1} times.");
+            Console.WriteLine($"Reflecting Activity performed {_activity2} times.");
+            Console.WriteLine($"Listing Activity performed {_activity3} times");
+            Console.WriteLine();
             Console.WriteLine("Menu Options:");
-            Console.WriteLine("\\t 1. Start Breathing Activity");
-            Console.WriteLine("\\t 2. Start Reflecting Activity");
-            Console.WriteLine("\\t 3. Start Listing Activity");
-            Console.WriteLine("\\t 4. Quit");
+            Console.WriteLine("\t 1. Start Breathing Activity");
+            Console.WriteLine("\t 2. Start Reflecting Activity");
+            Console.WriteLine("\t 3. Start Listing Activity");
+            Console.WriteLine("\t 4. Quit");
+            Console.WriteLine("Select a choice from the menu: ");
             response = Console.ReadLine();
 
             switch (response)
             {
                 case "1":
                     BreathingActivity activity = new BreathingActivity();
-                    activity.DisplaySpinner();
-                    Console.WriteLine(activity.DisplayActivity());
-                    activity.Duration();
-                    activity.BreatheLength();
-                    activity.DisplayBreathingActivity();
-                    activity.DisplayEndMessage();
+                    activity.DisplayActivity();
+                    _activity1++;
                     break;
 
                 case "2":
                     ReflectingActivity reflectingActivity = new ReflectingActivity();
-                    reflectingActivity.DisplaySpinner();
-                    Console.WriteLine(reflectingActivity.DisplayActivity());
+                    reflectingActivity.DisplayActivity();
+                    _activity2++;
                     break;
                 case "3":
-                    Console.WriteLine("Start2ing Listing Activity!");
+                    ListingActivity listingActivity = new ListingActivity();
+                    listingActivity.DisplayActivity();
+                    _activity3++;
                     break;
                 case "4":
                     Environment.Exit(0);
@@ -41,6 +49,6 @@ class Menu
 
             }
         }
-        
+
     }
 }

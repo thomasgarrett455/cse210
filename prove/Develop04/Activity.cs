@@ -1,20 +1,22 @@
 public class Activity
 {
     private string _startMessage;
-    private string _endMessage;
+    private string _endMessage1;
+    // private string _endMessage2;
     private int _duration;
 
     public Activity()
     {
         _startMessage = "Welcome to the ";
-        _endMessage = "Well done!!";
+        _endMessage1 = "Well done!!";
         _duration = 0;
+        // _endMessage2 = $"You have completed another {_duration} seconds of the";
     }
 
-    public Activity(string startMessage, string endMessage, int duration)
+    public Activity(string startMessage, string endMessage1, int duration)
     {
         _startMessage = startMessage;
-        _endMessage = endMessage;
+        _endMessage1 = endMessage1;
         _duration = duration;
     }
 
@@ -28,9 +30,14 @@ public class Activity
         return $"{_startMessage}";
     }
 
-    public string DisplayEndMessage()
+    public string DisplayEndMessage1()
     {
-        return $"{_endMessage}";
+        return $"{_endMessage1}";
+    }
+
+    public string DisplayEndMessage2()
+    {
+        return $"You have completed another {_duration} seconds of the";
     }
 
     public int Duration()
@@ -43,8 +50,8 @@ public class Activity
 
     public void DisplaySpinner()
     {
-        int sleepTime = 225;
-        int seconds = 2;
+        int sleepTime = 200;
+        int seconds = 3;
 
         DateTime cureentTime = DateTime.Now;
         DateTime endTime = cureentTime.AddSeconds(seconds);
@@ -74,3 +81,4 @@ public class Activity
         }
     }
 }
+

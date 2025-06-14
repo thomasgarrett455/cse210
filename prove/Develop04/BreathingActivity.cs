@@ -14,10 +14,17 @@ class BreathingActivity : Activity
         _rounded = rounded;
     }
 
-    public string DisplayActivity()
+    public void DisplayActivity()
     {
+        DisplaySpinner();
         Console.WriteLine($"{DisplayStartMessage()} Breathing Activity");
-        return $"\n{_description}";
+        Console.WriteLine($"\n{_description}");
+        Duration();
+        BreatheLength();
+        DisplayBreathingActivity();
+        Console.WriteLine(DisplayEndMessage1());
+        Console.WriteLine(DisplayEndMessage2() + " " + ActivityName());
+        DisplaySpinner();
     }
 
     public void BreatheLength()
@@ -34,19 +41,25 @@ class BreathingActivity : Activity
 
         for (int cycle = 0; cycle < cycles; cycle++)
         {
+                Console.WriteLine();
             for (int i = countdownTime; i > 0; i--)
             {
-                Console.Write($"Breathe in...{i} \r");
-                Thread.Sleep(1000);
-            }
-
-            for (int i = countdownTime; i > 0; i--)
-            {
-                Console.Write($"Breathe out...{i} \r");
+                Console.Write($"Breathe in...{i}\r");
                 Thread.Sleep(1000);
             }
             Console.WriteLine();
+            for (int i = countdownTime; i > 0; i--)
+            {
+                Console.Write($"Breathe out...{i}\r");
+                Thread.Sleep(1000);
+            }
+                Console.WriteLine();
         }
 
+    }
+
+    public string ActivityName()
+    {
+        return "Breathing Activity";
     }
 }
