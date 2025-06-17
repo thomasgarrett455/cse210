@@ -2,7 +2,6 @@ public class Activity
 {
     private string _startMessage;
     private string _endMessage1;
-    // private string _endMessage2;
     private int _duration;
 
     public Activity()
@@ -10,7 +9,6 @@ public class Activity
         _startMessage = "Welcome to the ";
         _endMessage1 = "Well done!!";
         _duration = 0;
-        // _endMessage2 = $"You have completed another {_duration} seconds of the";
     }
 
     public Activity(string startMessage, string endMessage1, int duration)
