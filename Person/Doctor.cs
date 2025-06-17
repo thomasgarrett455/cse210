@@ -2,15 +2,22 @@ class Doctor : Person
 {
 
     private string _instuments;
-    public Doctor(string firstName, string lastName, int age, string instruments)
+    private double _salary;
+    public Doctor(string firstName, string lastName, int age, string instruments, double salary)
     : base(firstName, lastName, age)
     {
         _instuments = instruments;
+        _salary = salary;
     }
 
-        public string GetDoctorInformation()
+    public override string GetPersonInformation()
     {
 
-        return $"{GetPersonInformation()} :: Instruments: {_instuments}";
+        return $"{base.GetPersonInformation()} :: Instruments: {_instuments}";
+    }
+
+    public override double GetSalary()
+    {
+        return _salary;
     }
 }
