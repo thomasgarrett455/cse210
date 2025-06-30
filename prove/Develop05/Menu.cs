@@ -2,12 +2,6 @@ using System.Runtime.InteropServices;
 
 class Menu
 {
-    private GoalManager _goalManager;
-
-    public Menu()
-    {
-        _goalManager = new GoalManager();
-    }
 
     public void DisplayMenu()
     {

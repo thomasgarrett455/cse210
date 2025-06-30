@@ -1,33 +1,31 @@
 class SimpleGoal : Goals
 {
-    private int _timesCompleted;
+    private bool _isCompleted;
+    public SimpleGoal(string goalName, string goalDescription, int goalPoints)
+    : base(goalName, goalDescription, goalPoints)
+    {
 
+    }
     public SimpleGoal()
     {
-        _timesCompleted = 0;
-    }
-
-    public SimpleGoal(string goalName, string goalDescription, int goalPoints, bool isCompleted)
-    : base(goalName, goalDescription, goalPoints, isCompleted)
-    {
-
-    }
-
-    public override bool IsGoalComplete()
-    {
-        if (!IsGoalCompleted)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        _isCompleted = false;
     }
 
     public override int RecordEvent()
     {
-        _timesCompleted++;
-        return _timesCompleted;
+        _isCompleted = true;
+        return GoalPoints();
+    }
+
+    public override string IsGoalComplete()
+    {
+        if (_isCompleted == true)
+        {
+            return "[x]";
+        }
+        else
+        {
+            return "[]";
+        }
     }
 }
