@@ -18,6 +18,21 @@ class CheckListGoal : Goals
         _bonusPoints = bonusPoints;
     }
 
+    public int SetTimesToComplete
+    {
+        set { _timesToComplete = value; }
+    }
+
+    public int SetTimesCompleted
+    {
+        set { _timesCompleted = value; }
+    }
+
+    public int SetBonusPoints
+    {
+        set { _bonusPoints = value; }
+    }
+
     public override string DisplayGoalInformation()
     {
         return $"{base.DisplayGoalInformation()}, {_timesCompleted} / {_timesToComplete}";
@@ -68,6 +83,18 @@ class CheckListGoal : Goals
         }
     }
 
+    public override bool SaveGoalCompletion()
+    {
+      if (_timesCompleted == _timesToComplete)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }  
+    }
+
     public override string ToString()
     {
         return "ChecklistGoal";
@@ -75,7 +102,7 @@ class CheckListGoal : Goals
 
     public override string SaveGoalInformation()
     {
-        return $"{base.SaveGoalInformation()}#{_timesCompleted}/{_timesToComplete}";
+        return $"{base.SaveGoalInformation()}#{_timesCompleted}#{_timesToComplete}#{_bonusPoints}";
     }
 
 

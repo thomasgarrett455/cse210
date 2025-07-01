@@ -1,9 +1,12 @@
+using System.Dynamic;
+
 public abstract class Goals
 {
     private string _goalName;
     private string _goalDescription;
     private int _goalPoints;
     private string _goalType;
+    protected bool _isComplete;
 
     public Goals()
     {
@@ -19,9 +22,34 @@ public abstract class Goals
         _goalPoints = goalPoints;
     }
 
+    public string SetGoalName
+    {
+        set { _goalName = value; }
+    }
+
+
     public int GetGoalPoints()
     {
         return _goalPoints;
+    }
+
+    public int SetGoalPoints
+    {
+        set { _goalPoints = value; }
+    }
+
+    public string SetGoalDescription
+    {
+        set { _goalDescription = value; }
+    }
+
+    public bool SetGoalCompletion
+    {
+        set{ _isComplete = value; }
+    }
+    public string GetGoalType()
+    {
+        return _goalType;
     }
 
     public virtual void GoalInformation()
@@ -54,8 +82,10 @@ public abstract class Goals
 
     public virtual string SaveGoalInformation()
     {
-        return $"#{ToString()}#{IsGoalComplete()}#{_goalName}#{_goalDescription}#{_goalPoints}";
+        return $"{ToString()}#{SaveGoalCompletion()}#{_goalName}#{_goalDescription}#{_goalPoints}";
     }
+
+    public abstract bool SaveGoalCompletion();
     
 
 }

@@ -1,6 +1,5 @@
 class SimpleGoal : Goals
 {
-    private bool _isCompleted;
     public SimpleGoal(string goalName, string goalDescription, int goalPoints)
     : base(goalName, goalDescription, goalPoints)
     {
@@ -8,25 +7,25 @@ class SimpleGoal : Goals
     }
     public SimpleGoal()
     {
-        _isCompleted = false;
+        _isComplete = false;
     }
 
     public override int RecordEvent()
     {
-        if (_isCompleted == true)
+        if (_isComplete == true)
         {
             return 0;
         }
         else
         {
-            _isCompleted = true;
+            _isComplete = true;
             return GetGoalPoints();
         }
     }
 
     public override string IsGoalComplete()
     {
-        if (_isCompleted == true)
+        if (_isComplete == true)
         {
             return "[x]";
         }
@@ -34,6 +33,12 @@ class SimpleGoal : Goals
         {
             return "[]";
         }
+    }
+
+    public override bool SaveGoalCompletion()
+    {
+
+        return _isComplete;
     }
 
     public override string ToString()

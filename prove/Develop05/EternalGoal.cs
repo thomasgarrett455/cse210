@@ -20,9 +20,14 @@ class EternalGoal : Goals
     {
         return "[]";
     }
-    
+
     public override string ToString()
     {
         return "EternalGoal";
+    }
+
+    public override bool SaveGoalCompletion()
+    {
+        return false;
     }
 }

@@ -77,14 +77,64 @@ public class GoalManager
         }
         else
         {
-            string[] lines = File.ReadAllLines(_filename); // each line as a string
-            string combined = string.Join("#", lines);     // combine all lines with a #
-            string[] words = combined.Split('#');
-
-            foreach (string word in words.Skip(1))
+            string[] lines = File.ReadAllLines(_filename);
+            _totalScore = int.Parse(lines[0]);
+            foreach (string line in lines.Skip(1))
             {
-            Console.Write(word);
+                string[] parts = line.Split("#");
+                string goalType = parts[0];
+                bool goalCompletion = bool.Parse(parts[1]);
+                string goalName = parts[2];
+                string goalDescription = parts[3];
+                int goalPoints = int.Parse(parts[4]);
+
+                switch (goalType)
+                {
+                    case "SimpleGoal":
+                        SimpleGoal simpleGoal = new SimpleGoal();
+                        {
+                            simpleGoal.SetGoalCompletion = goalCompletion;
+                            simpleGoal.SetGoalName = goalName;
+                            simpleGoal.SetGoalDescription = goalDescription;
+                            simpleGoal.SetGoalPoints = goalPoints;
+                            AddGoal(simpleGoal);
+                        }
+                        break;
+
+                    case "EternalGoal":
+                        EternalGoal eternalGoal = new EternalGoal();
+                        {
+                            eternalGoal.SetGoalCompletion = goalCompletion;
+                            eternalGoal.SetGoalName = goalName;
+                            eternalGoal.SetGoalDescription = goalDescription;
+                            eternalGoal.SetGoalPoints = goalPoints;
+                            AddGoal(eternalGoal);
+                        }
+                        break;
+
+                    case "ChecklistGoal":
+                        int timesCompleted = int.Parse(parts[5]);
+                        int timesToComplete = int.Parse(parts[6]);
+                        int bonusPoints = int.Parse(parts[7]);
+                        CheckListGoal listGoal = new CheckListGoal();
+                        {
+                            listGoal.SetGoalCompletion = goalCompletion;
+                            listGoal.SetGoalName = goalName;
+                            listGoal.SetGoalDescription = goalDescription;
+                            listGoal.SetGoalPoints = goalPoints;
+                            listGoal.SetTimesToComplete = timesToComplete;
+                            listGoal.SetTimesCompleted = timesCompleted;
+                            listGoal.SetBonusPoints = bonusPoints;
+                            AddGoal(listGoal);
+
+                        }
+                        break;
+
+                }
             }
+
+            
+
         }
     }
 
