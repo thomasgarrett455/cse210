@@ -27,6 +27,11 @@ public abstract class Goals
         return _goalPoints;
     }
 
+    public int GetPoints()
+    {
+        return _totalPoints;
+    }
+
     public virtual string DisplayGoalInformation()
     {
         return $"{IsGoalComplete()} {_goalName}, {_goalDescription}, {_goalPoints}";

@@ -11,10 +11,11 @@ class Program
         // Console.WriteLine(simplegoal.DisplayGoalInformation());
 
         CheckListGoal checkgoal = new CheckListGoal("Clean", "Dust Fans", 10, 5, 0, 100);
-        checkgoal.RecordEvent();
-        checkgoal.RecordEvent();
-        checkgoal.RecordEvent();
-        checkgoal.RecordEvent();
+        Console.WriteLine(checkgoal.RecordEvent());
+        Console.WriteLine(checkgoal.GetPoints());
+        // checkgoal.RecordEvent();
+        // checkgoal.RecordEvent();
+        // checkgoal.RecordEvent();
         // checkgoal.RecordEvent();
 
 
