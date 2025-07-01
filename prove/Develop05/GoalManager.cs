@@ -60,8 +60,7 @@ public class GoalManager
             writer.WriteLine(_totalScore);
             foreach (var goal in _goals)
             {
-                writer.Write(goal.ToString());
-                writer.Write(goal.DisplayGoalInformation());
+                writer.WriteLine(goal.SaveGoalInformation());
             }
         }
     }

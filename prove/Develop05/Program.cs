@@ -6,5 +6,4 @@ class Program
         Menu myMenu = new Menu();
         myMenu.DisplayMenu();
     }
-
 }

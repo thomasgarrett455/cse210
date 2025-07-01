@@ -51,6 +51,11 @@ public abstract class Goals
     {
         return "";
     }
+
+    public virtual string SaveGoalInformation()
+    {
+        return $"{ToString()}#{IsGoalComplete()}#{_goalName}#{_goalDescription}#{_goalPoints}";
+    }
     
 
 }
