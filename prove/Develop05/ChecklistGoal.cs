@@ -23,6 +23,19 @@ class CheckListGoal : Goals
         return $"{base.DisplayGoalInformation()}, {_timesCompleted} / {_timesToComplete}";
     }
 
+    public override void GoalInformation()
+    {
+        base.GoalInformation();
+
+        Console.WriteLine("How many times do you need to do this goal?");
+        string times = Console.ReadLine();
+        _timesToComplete = int.Parse(times);
+
+        Console.WriteLine("How many bonus points for completing this goal?");
+        string bonus = Console.ReadLine();
+        _bonusPoints = int.Parse(bonus);
+    }
+
     public override int RecordEvent()
     {
         _timesCompleted++;

@@ -24,13 +24,12 @@ class Menu
             switch (response)
             {
                 case "1":
-                    string userInput = "";
                     Console.WriteLine("The types of goals are:");
                     Console.WriteLine("1. Simple Goal");
                     Console.WriteLine("2. Eternal Goal");
                     Console.WriteLine("3. Checklist Goal");
                     Console.WriteLine("Which type of goal would you like to create? ");
-                    userInput = Console.ReadLine();
+                    string userInput = Console.ReadLine();
                     switch (userInput)
                     {
                         default:
@@ -46,11 +45,13 @@ class Menu
                             Console.WriteLine("You have chosen Eternal Goal");
                             EternalGoal eternalGoal = new EternalGoal();
                             eternalGoal.GoalInformation();
+                            manager.AddGoal(eternalGoal);
                             break;
                         case "3":
                             Console.WriteLine("You have chosen Checklist Goal");
-                            // CheckListGoal myGoal = new CheckListGoal();
-                            // myGoal.GetGoalInformation();
+                            CheckListGoal checkListGoal = new CheckListGoal();
+                            checkListGoal.GoalInformation();
+                            manager.AddGoal(checkListGoal);
                             break;
                     }
                     break;
@@ -70,6 +71,7 @@ class Menu
 
                 case "5":
                     Console.WriteLine("You have selected to record event.");
+                    manager.RecordEvent();
                     break;
 
                 case "6":

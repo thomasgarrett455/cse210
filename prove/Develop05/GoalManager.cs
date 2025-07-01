@@ -14,11 +14,17 @@ public class GoalManager
         _goals.Add(goal);
     }
 
-    public void RecordEvent(int goalIndex)
+    public void RecordEvent()
     {
-        if (goalIndex >= 0 && goalIndex < _goals.Count)
+
+        Console.WriteLine("Which goal would you like to record an event for?");
+        DisplayAllGoals();
+        string choice = Console.ReadLine();
+        int userInput = int.Parse(choice);
+        userInput--;
+        if (userInput >= 0 && userInput < _goals.Count)
         {
-            int pointsEarned = _goals[goalIndex].RecordEvent();
+            int pointsEarned = _goals[userInput].RecordEvent();
 
             _totalScore += pointsEarned;
         }
