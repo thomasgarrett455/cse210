@@ -70,6 +70,7 @@ class Menu
 
                 case "4":
                     Console.WriteLine("You have selected to load goals.");
+                    manager.LoadFromFile();
                     break;
 
                 case "5":

@@ -65,4 +65,27 @@ public class GoalManager
         }
     }
 
+    public void LoadFromFile()
+    {
+        Console.WriteLine("What is the name of the file?");
+        _filename = Console.ReadLine();
+
+        if (!File.Exists(_filename))
+        {
+            Console.WriteLine("File not found.");
+            return;
+        }
+        else
+        {
+            string[] lines = File.ReadAllLines(_filename); // each line as a string
+            string combined = string.Join("#", lines);     // combine all lines with a #
+            string[] words = combined.Split('#');
+
+            foreach (string word in words.Skip(1))
+            {
+            Console.Write(word);
+            }
+        }
+    }
+
 }

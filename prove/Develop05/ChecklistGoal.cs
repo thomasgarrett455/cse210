@@ -75,7 +75,7 @@ class CheckListGoal : Goals
 
     public override string SaveGoalInformation()
     {
-        return $"{base.SaveGoalInformation()}#{_timesToComplete}/{_timesCompleted}";
+        return $"{base.SaveGoalInformation()}#{_timesCompleted}/{_timesToComplete}";
     }
 
 
