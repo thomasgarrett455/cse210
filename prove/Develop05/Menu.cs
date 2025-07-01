@@ -2,6 +2,7 @@ using System.Runtime.InteropServices;
 
 class Menu
 {
+    GoalManager manager = new GoalManager();
 
     public void DisplayMenu()
     {
@@ -37,9 +38,14 @@ class Menu
                             break;
                         case "1":
                             Console.WriteLine("You have chosen Simple Goal");
+                            SimpleGoal simpleGoal = new SimpleGoal();
+                            simpleGoal.GoalInformation();
+                            manager.AddGoal(simpleGoal);
                             break;
                         case "2":
                             Console.WriteLine("You have chosen Eternal Goal");
+                            EternalGoal eternalGoal = new EternalGoal();
+                            eternalGoal.GoalInformation();
                             break;
                         case "3":
                             Console.WriteLine("You have chosen Checklist Goal");
@@ -51,6 +57,7 @@ class Menu
 
                 case "2":
                     Console.WriteLine("You have selected to list goals.");
+                    manager.DisplayAllGoals();
                     break;
 
                 case "3":

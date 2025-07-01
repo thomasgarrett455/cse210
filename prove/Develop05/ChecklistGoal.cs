@@ -25,11 +25,22 @@ class CheckListGoal : Goals
 
     public override int RecordEvent()
     {
-        int points = GoalPoints();
-        int oldPoints = GetPoints();
-        int newPoints = oldPoints + points;
         _timesCompleted++;
-        return newPoints;
+
+        if (_timesCompleted < _timesToComplete)
+        {
+            return GetGoalPoints();
+        }
+
+        else if (_timesCompleted == _timesToComplete)
+        {
+            return _bonusPoints + GetGoalPoints();
+        }
+
+        else
+        {
+            return 0;
+        }
     }
 
     public override string IsGoalComplete()

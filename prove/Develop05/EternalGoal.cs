@@ -6,9 +6,14 @@ class EternalGoal : Goals
 
     }
 
+    public EternalGoal()
+    {
+        
+    }
+
     public override int RecordEvent()
     {
-        return GoalPoints();
+        return GetGoalPoints();
     }
 
     public override string IsGoalComplete()

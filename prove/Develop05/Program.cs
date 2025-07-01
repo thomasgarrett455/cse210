@@ -3,16 +3,36 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Menu myMenu = new Menu();
-        // myMenu.DisplayMenu();
+        Menu myMenu = new Menu();
+        myMenu.DisplayMenu();
+
+        // GoalManager manager = new GoalManager();
+
+        // EternalGoal eternalgoal = new EternalGoal("Clean", "Dust Fans", 10);
 
         // SimpleGoal simplegoal = new SimpleGoal("Clean", "Dust fans", 10);
-        // simplegoal.RecordEvent();
-        // Console.WriteLine(simplegoal.DisplayGoalInformation());
 
-        CheckListGoal checkgoal = new CheckListGoal("Clean", "Dust Fans", 10, 5, 0, 100);
-        Console.WriteLine(checkgoal.RecordEvent());
-        Console.WriteLine(checkgoal.GetPoints());
+        // CheckListGoal checkgoal = new CheckListGoal("Clean", "Dust Fans", 10, 5, 0, 100);
+
+        // manager.AddGoal(checkgoal);
+        // manager.AddGoal(simplegoal);
+        // manager.AddGoal(eternalgoal);
+        // manager.RecordEvent(0);
+        // manager.RecordEvent(0);
+        // manager.RecordEvent(0);
+        // manager.RecordEvent(0);
+        // manager.RecordEvent(0);
+        // manager.RecordEvent(1);
+        // manager.RecordEvent(2);
+        // manager.RecordEvent(2);
+
+
+        // manager.DisplayAllGoals();
+        // manager.DisplayScore();
+
+        
+
+
         // checkgoal.RecordEvent();
         // checkgoal.RecordEvent();
         // checkgoal.RecordEvent();
@@ -21,7 +41,6 @@ class Program
 
         // Console.WriteLine(checkgoal.DisplayGoalInformation());
 
-        // EternalGoal eternalgoal = new EternalGoal("Clean", "Dust Fans", 10);
         // eternalgoal.RecordEvent();
         // Console.WriteLine(eternalgoal.DisplayGoalInformation());
 
