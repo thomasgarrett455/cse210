@@ -35,4 +35,9 @@ class SimpleGoal : Goals
             return "[]";
         }
     }
+
+    public override string ToString()
+    {
+        return "SimpleGoal";
+    }
 }

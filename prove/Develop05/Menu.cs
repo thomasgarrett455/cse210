@@ -9,6 +9,7 @@ class Menu
         string response = "";
         while (response != "6")
         {
+            manager.DisplayScore();
             Console.WriteLine();
             Console.WriteLine("Menu Options:");
             Console.WriteLine("1. Create New Goal");
@@ -24,6 +25,7 @@ class Menu
             switch (response)
             {
                 case "1":
+
                     Console.WriteLine("The types of goals are:");
                     Console.WriteLine("1. Simple Goal");
                     Console.WriteLine("2. Eternal Goal");
@@ -63,6 +65,7 @@ class Menu
 
                 case "3":
                     Console.WriteLine("You have selected to save goals.");
+                    manager.SaveToFile();
                     break;
 
                 case "4":

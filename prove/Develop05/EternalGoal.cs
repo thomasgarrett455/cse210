@@ -8,7 +8,7 @@ class EternalGoal : Goals
 
     public EternalGoal()
     {
-        
+
     }
 
     public override int RecordEvent()
@@ -19,5 +19,10 @@ class EternalGoal : Goals
     public override string IsGoalComplete()
     {
         return "[]";
+    }
+    
+    public override string ToString()
+    {
+        return "EternalGoal";
     }
 }

@@ -2,11 +2,13 @@ public class GoalManager
 {
     private List<Goals> _goals;
     private int _totalScore;
+    private string _filename;
 
     public GoalManager()
     {
         _goals = new List<Goals>();
         _totalScore = 0;
+        _filename = "";
     }
 
     public void AddGoal(Goals goal)
@@ -45,6 +47,23 @@ public class GoalManager
 
     public void DisplayScore()
     {
-        Console.WriteLine($"\nYour total score is: {_totalScore}");
+        Console.WriteLine($"\nYou have {_totalScore} points.");
     }
+
+    public void SaveToFile()
+    {
+        Console.WriteLine("What is the name of the file?");
+        _filename = Console.ReadLine();
+
+        using (StreamWriter writer = new StreamWriter(_filename))
+        {
+            writer.WriteLine(_totalScore);
+            foreach (var goal in _goals)
+            {
+                writer.Write(goal.ToString());
+                writer.Write(goal.DisplayGoalInformation());
+            }
+        }
+    }
+
 }

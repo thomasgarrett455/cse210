@@ -3,17 +3,15 @@ public abstract class Goals
     private string _goalName;
     private string _goalDescription;
     private int _goalPoints;
-    private bool _isCompleted;
-    private int _totalPoints;
+    private string _goalType;
 
     public Goals()
     {
         _goalName = "";
         _goalDescription = "";
         _goalPoints = 0;
-        _isCompleted = false;
     }
-    
+
     public Goals(string goalName, string goalDescription, int goalPoints)
     {
         _goalName = goalName;
@@ -48,6 +46,11 @@ public abstract class Goals
     public abstract int RecordEvent();
 
     public abstract string IsGoalComplete();
+
+    public override string ToString()
+    {
+        return "";
+    }
     
 
 }

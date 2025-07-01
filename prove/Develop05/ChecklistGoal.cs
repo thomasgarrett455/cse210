@@ -68,6 +68,11 @@ class CheckListGoal : Goals
         }
     }
 
+    public override string ToString()
+    {
+        return "ChecklistGoal";
+    }
+
 
 }
 
