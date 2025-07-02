@@ -108,7 +108,6 @@ class CheckListGoal : Goals
         return $"{base.SaveGoalInformation()}#{_timesCompleted}#{_timesToComplete}#{_bonusPoints}";
     }
 
-
 }
 
    

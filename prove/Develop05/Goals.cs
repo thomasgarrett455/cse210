@@ -27,7 +27,6 @@ public abstract class Goals
         set { _goalName = value; }
     }
 
-
     public int GetGoalPoints()
     {
         return _goalPoints;
@@ -87,5 +86,4 @@ public abstract class Goals
 
     public abstract bool SaveGoalCompletion();
     
-
 }

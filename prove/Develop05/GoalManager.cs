@@ -133,9 +133,24 @@ public class GoalManager
                 }
             }
 
-            
+
 
         }
     }
+    
+    public void GetLevel()
+{
+    int level = 1;
+    int threshold = 99;
+    int increment = 150;
+
+    while (_totalScore >= threshold)
+    {
+        level++;
+        threshold += increment;
+        increment += 50;
+    }
+    Console.WriteLine($"You are level: {level}");
+}
 
 }

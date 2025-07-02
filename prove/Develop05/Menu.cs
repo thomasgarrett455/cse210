@@ -10,6 +10,7 @@ class Menu
         while (response != "6")
         {
             Console.WriteLine();
+            manager.GetLevel();
             manager.DisplayScore();
             Console.WriteLine();
             Console.WriteLine("Menu Options:");
