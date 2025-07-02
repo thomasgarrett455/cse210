@@ -14,11 +14,13 @@ class SimpleGoal : Goals
     {
         if (_isComplete == true)
         {
+            Console.WriteLine("You have already completed this goal.");
             return 0;
         }
         else
         {
             _isComplete = true;
+            Console.WriteLine($"Congratulations! You have earned {GetGoalPoints()} points.");
             return GetGoalPoints();
         }
     }

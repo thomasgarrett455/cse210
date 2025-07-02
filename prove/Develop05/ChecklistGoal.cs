@@ -35,7 +35,7 @@ class CheckListGoal : Goals
 
     public override string DisplayGoalInformation()
     {
-        return $"{base.DisplayGoalInformation()}, {_timesCompleted} / {_timesToComplete}";
+        return $"{base.DisplayGoalInformation()} -- Currently Completed: {_timesCompleted} / {_timesToComplete}";
     }
 
     public override void GoalInformation()
@@ -57,16 +57,19 @@ class CheckListGoal : Goals
 
         if (_timesCompleted < _timesToComplete)
         {
+            Console.WriteLine($"Congratulations! You have earned {GetGoalPoints()} points.");
             return GetGoalPoints();
         }
 
         else if (_timesCompleted == _timesToComplete)
         {
+            Console.WriteLine($"Congratulations! You have earned {GetGoalPoints() + _bonusPoints} points.");
             return _bonusPoints + GetGoalPoints();
         }
 
         else
         {
+            Console.WriteLine("You have already completed this goal.");
             return 0;
         }
     }

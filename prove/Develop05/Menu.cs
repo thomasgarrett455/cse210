@@ -9,6 +9,7 @@ class Menu
         string response = "";
         while (response != "6")
         {
+            Console.WriteLine();
             manager.DisplayScore();
             Console.WriteLine();
             Console.WriteLine("Menu Options:");

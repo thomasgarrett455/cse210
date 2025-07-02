@@ -68,7 +68,7 @@ public abstract class Goals
 
     public virtual string DisplayGoalInformation()
     {
-        return $"{IsGoalComplete()} {_goalName}, {_goalDescription}, {_goalPoints}";
+        return $"{IsGoalComplete()} {_goalName} ({_goalDescription})";
     }
 
     public abstract int RecordEvent();
