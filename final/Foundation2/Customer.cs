@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 class Customer
 {
     private string _name;
@@ -13,7 +11,7 @@ class Customer
 
     public string DisplayCustomerInfo()
     {
-        return $"{_name}\n Address: {_address}";
+        return $"{_name}\nAddress: {_address.DisplayAddress()}";
     }
 
     public int ShippingPrice()

@@ -22,4 +22,9 @@ class Product
     {
         return $"[Product Name: {_name}\nProduct ID: {_productId}\nPrice: {_price}\nQuantity: {_quantity}]";
     }
+
+    public string DisplayPackingInfo()
+    {
+        return $"Product Name: {_name}, Product ID: {_productId}, Quantity: {_quantity}\n";
+    }
 }
