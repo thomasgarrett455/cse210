@@ -38,6 +38,4 @@ public abstract class Activity
 
     public abstract double GetPace();
 
-
-
 }
